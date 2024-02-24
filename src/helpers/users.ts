@@ -23,7 +23,6 @@ export const groupUsersWithCount = (arr) =>
     return res;
   }, {});
 
-// @ts-ignore
 export const sortUsersGroups = (groups) =>
   Object.values(groups).sort((a, b) => {
     if (a.completedCount !== b.completedCount) {

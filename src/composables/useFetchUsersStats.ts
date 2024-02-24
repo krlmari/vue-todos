@@ -3,7 +3,7 @@ import { getTodos } from "../lib/api";
 import { groupUsersWithCount, sortUsersGroups } from "../helpers/users";
 import { delay } from "../helpers/index";
 
-export const fetchUsersStats = () => {
+export const useFetchUsersStats = () => {
   const data = ref([]);
   const error = ref(false);
   const loading = ref(false);

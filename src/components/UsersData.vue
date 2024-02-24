@@ -25,7 +25,7 @@ defineProps<{
 <style scoped>
 .users-data__status {
   display: block;
-  margin: 40px auto;
+  margin: 25% auto;
   text-align: center;
 }
 </style>
