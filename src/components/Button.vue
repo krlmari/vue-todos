@@ -1,0 +1,29 @@
+<script setup lang="ts">
+defineProps<{
+  text: string;
+  handleClick: () => void;
+}>();
+</script>
+
+<template>
+  <button class="button" @click="handleClick">{{ text }}</button>
+</template>
+
+<style scoped>
+.button {
+  position: relative;
+  font-size: 16px;
+  padding: 13px 20px 13px;
+  border: 1px solid rgb(226, 222, 222);
+  border-radius: 8px;
+  user-select: none;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  background-color: white;
+  transition: color linear;
+}
+
+.button[disabled] {
+  color: gray;
+  cursor: default;
+}
+</style>

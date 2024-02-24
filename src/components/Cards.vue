@@ -1,0 +1,90 @@
+<script setup lang="ts">
+export interface IDataUser {
+  completedCount: number;
+  items: {
+    id: number;
+    title: string;
+  }[];
+  uncompletedCount: number;
+  userId: number;
+}
+
+defineProps<{
+  data: IDataUser[];
+}>();
+</script>
+
+<template>
+  <div class="users-cards">
+    <div v-for="card in data" :key="card.userId" class="user-card">
+      <div class="user-card__header">
+        <h2 class="user-card__title">Пользователь {{ card.userId }}</h2>
+        <p class="user-card__completed">
+          <span>{{ card.completedCount }}</span> /
+          <span>{{ card.uncompletedCount }}</span>
+        </p>
+      </div>
+
+      <ul class="user-card__list">
+        <li v-for="item in card.items" :key="item.id">{{ item.title }}</li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.users-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin: 40px 0;
+}
+
+@media screen and (max-width: 375px) {
+  .users-cards {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+.user-card {
+  position: relative;
+  padding: 13px 20px 13px;
+  border: 1px solid rgb(226, 222, 222);
+  background-color: white;
+  min-height: 180px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  transition: transform linear 0.3s;
+}
+
+.user-card:hover {
+  transform: scale(1.025);
+}
+
+.user-card__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-card__title {
+  font-size: 18px;
+}
+
+.user-card__completed span:first-child {
+  color: green;
+}
+
+.user-card__completed span:nth-child(2) {
+  color: red;
+}
+
+.user-card__list {
+  list-style: inside;
+  color: gray;
+}
+
+/* другие стили */
+</style>

@@ -1,0 +1,24 @@
+<script setup lang="ts"></script>
+
+<template>
+  <div class="preloader" />
+</template>
+
+<style scoped>
+.preloader {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border: 5px solid rgba(105, 105, 105, 0.624);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style>

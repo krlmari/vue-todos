@@ -1,15 +1,31 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
+import Button from "./components/Button.vue";
+
+import type { IDataUser } from "./components/Cards.vue";
+import UsersData from "./components/UsersData.vue";
+
+// @ts-ignore
+import { fetchUsersStats } from "./hooks/fetchUsersStats";
+
+const { fetchData, loading, error, data } = fetchUsersStats();
+
+defineProps<{
+  fetchData: () => {};
+  loading: boolean;
+  error: boolean;
+  data: IDataUser[];
+}>();
 </script>
 
 <template>
   <header>
-    <div class="wrapper">
-      <HelloWorld msg="Hello" />
-    </div>
+    <div class="wrapper"></div>
   </header>
 
-  <main></main>
+  <main>
+    <Button text="Загрузить данные" :handleClick="fetchData" />
+    <UsersData :data="data" :loading="loading" :error="error" />
+  </main>
 </template>
 
 <style scoped>
