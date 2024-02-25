@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { IDataUser } from "./Cards.vue";
+import type { IDataUser } from "./UsersCards.vue";
 import {
   Chart as ChartJS,
   Title,

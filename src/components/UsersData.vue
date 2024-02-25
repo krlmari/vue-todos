@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Preloader from "./Preloader.vue";
-import Cards, { type IDataUser } from "./Cards.vue";
-import Chart from "./Chart.vue";
+import UsersCards, { type IDataUser } from "./UsersCards.vue";
+import UserBarChart from "./UserBarChart.vue";
 
 defineProps<{
   data: IDataUser[];
@@ -18,8 +18,8 @@ defineProps<{
     </div>
 
     <div v-if="!loading && !error && data?.length > 0">
-      <Cards :data="data" />
-      <Chart :data="data" />
+      <UsersCards :data="data" />
+      <UserBarChart :data="data" />
     </div>
   </section>
 </template>
