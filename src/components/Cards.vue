@@ -85,6 +85,4 @@ defineProps<{
   list-style: inside;
   color: gray;
 }
-
-/* другие стили */
 </style>
