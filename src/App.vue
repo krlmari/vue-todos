@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Button from "./components/Button.vue";
 
-import type { IDataUser } from "./components/Cards.vue";
+import type { IDataUser } from "./components/UsersCards.vue";
 import UsersData from "./components/UsersData.vue";
 
 import { useFetchUsersStats } from "./composables/useFetchUsersStats";
@@ -32,4 +32,3 @@ header {
   line-height: 1.5;
 }
 </style>
-./composables/useFetchUsersStats
